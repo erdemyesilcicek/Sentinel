@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/generateFragment">
 
+    <fragment
+        android:id="@+id/generateFragment"
+        android:name="com.erdemyesilcicek.sentinel.GenerateFragment"
+        android:label="fragment_generate"
+        tools:layout="@layout/fragment_generate" >
+        <action
+            android:id="@+id/action_generateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.erdemyesilcicek.sentinel.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_generateFragment"
+            app:destination="@id/generateFragment" />
+    </fragment>
 </navigation>

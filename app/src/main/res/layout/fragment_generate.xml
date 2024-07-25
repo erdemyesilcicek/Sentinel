@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tvAppName"
+                android:id="@+id/appNameText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -33,11 +33,11 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/tvPassword"
+                android:id="@+id/passwordText"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:hint="password"
                 android:textSize="17sp"
@@ -45,18 +45,42 @@
                 android:drawableEnd="@drawable/baseline_content_copy_24"
                 android:paddingHorizontal="15dp"
                 android:textIsSelectable="true"
-                app:layout_constraintTop_toBottomOf="@+id/tvAppName"/>
+                app:layout_constraintTop_toBottomOf="@+id/appNameText"/>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:min="4"
+                android:max="18"
+                android:progress="8"
+                android:progressTint="@color/purple"
+                android:thumbTint="@color/darkPurple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:foregroundGravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/passwordText"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/seekbarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textSize="14sp"
+                app:layout_constraintRight_toRightOf="@+id/seekBar"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar"
+                android:layout_marginRight="20dp"/>
 
             <CheckBox
                 android:id="@+id/checkboxLowercase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="40dp"
                 android:text="Lowercase (a-z)"
                 android:checked="true"
                 android:buttonTint="@color/purple"
-                app:layout_constraintStart_toStartOf="@+id/tvPassword"
-                app:layout_constraintTop_toBottomOf="@+id/tvPassword"/>
+                app:layout_constraintStart_toStartOf="@+id/passwordText"
+                app:layout_constraintTop_toBottomOf="@+id/passwordText"/>
 
             <CheckBox
                 android:id="@+id/checkboxNumbers"
@@ -76,7 +100,7 @@
                 android:buttonTint="@color/purple"
                 android:checked="true"
                 android:text="Uppercase (A-Z)"
-                app:layout_constraintEnd_toEndOf="@+id/tvPassword"
+                app:layout_constraintEnd_toEndOf="@+id/passwordText"
                 app:layout_constraintStart_toEndOf="@+id/checkboxLowercase"
                 app:layout_constraintTop_toTopOf="@id/checkboxLowercase" />
 
@@ -99,11 +123,10 @@
                 android:text="Generate Password"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="50dp"
                 android:layout_marginHorizontal="20dp"
                 android:backgroundTint="@color/purple"
-                app:layout_constraintTop_toBottomOf="@+id/checkboxSymbols"
-                android:layout_marginTop="5dp"/>
+                app:layout_constraintTop_toBottomOf="@+id/checkboxSymbols"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/saveButton"
