@@ -9,18 +9,5 @@
         android:id="@+id/generateFragment"
         android:name="com.erdemyesilcicek.sentinel.GenerateFragment"
         android:label="fragment_generate"
-        tools:layout="@layout/fragment_generate" >
-        <action
-            android:id="@+id/action_generateFragment_to_listFragment"
-            app:destination="@id/listFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/listFragment"
-        android:name="com.erdemyesilcicek.sentinel.ListFragment"
-        android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
-        <action
-            android:id="@+id/action_listFragment_to_generateFragment"
-            app:destination="@id/generateFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_generate" />
 </navigation>
